@@ -13,4 +13,4 @@ video you your system clipboard with just one click
 
 ## ScreenShots
 
-
+![screenshot of the extension](./src/screenshot.png)
