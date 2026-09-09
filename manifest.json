@@ -2,12 +2,20 @@
   "manifest_version": 2,
   "name": "YouTube Transcript Yoinker",
   "version": "1.0.0",
-  "description": "Yoink YouTube transcript to clipboard",
+  "description": "Yoink YouTube transcripts to your clipboard.",
   "permissions": [
     "clipboardWrite",
     "activeTab",
     "*://*.youtube.com/*"
   ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "youtube-transcript-yoinker@example.com",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
   "browser_action": {
     "default_icon": {
       "16": "favicon.png",
