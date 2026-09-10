@@ -12,3 +12,32 @@
   display: flex !important;
   align-items: center;
 }
+
+#yoinker-toast-container {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999999;
+  pointer-events: none;
+}
+.yoinker-toast {
+  background: #0f0f0f;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 24px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.yoinker-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,6 +1,34 @@
 const sleep = (ms) =>
   new Promise((resolve) => setTimeout(resolve, ms));
 
+function showToast(text, duration = 3000) {
+  const existing = document.getElementById('yoinker-toast-container');
+  if (existing) existing.remove();
+
+  const container = document.createElement('div');
+  container.id = 'yoinker-toast-container';
+
+  const toast = document.createElement('div');
+  toast.className = 'yoinker-toast';
+  toast.textContent = text;
+
+  container.appendChild(toast);
+  document.body.appendChild(container);
+
+  requestAnimationFrame(() => {
+    toast.classList.add('show');
+  });
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => container.remove(), 300);
+  }, duration);
+}
+
+
+
+
+
 async function openTranscript() {
   const expand =
     document.querySelector("#expand") ||
@@ -284,7 +312,7 @@ function addYoinkButton() {
         .length;
 
       btn.textContent = `✓ Copied ${lines} lines`;
-
+      showToast(`Copied ${lines} lines`);
       setTimeout(() => {
         btn.textContent = originalText;
         btn.disabled = false;
@@ -299,8 +327,8 @@ function addYoinkButton() {
     } catch (error) {
       console.error("Yoink error:", error);
 
-      btn.textContent = "❌ Transcript failed";
-
+      btn.textContent = "Transcript failed";
+      showToast("Failed to copy")
       setTimeout(() => {
         btn.textContent = originalText;
         btn.disabled = false;

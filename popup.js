@@ -4,3 +4,5 @@ document.getElementById('yoink').onclick = async () => {
     code: `document.getElementById('yt-yoink-btn')?.click()`
   });
 };
+
+console.log("Yoinker Loaded")
