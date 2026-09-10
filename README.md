@@ -1,4 +1,4 @@
-## Youtube Transcript Yoinker (v1.0.1)
+## Youtube Transcript Yoinker (v1.0.2)
 
 - this is a personal project, what it does is it copies any ```youtube``` 
 video you your system clipboard with just one click
