@@ -1,4 +1,4 @@
-## Youtube Transcript Yoinker (v1.0.0)
+## Youtube Transcript Yoinker (v1.0.1)
 
 - this is a personal project, what it does is it copies any ```youtube``` 
 video you your system clipboard with just one click
@@ -10,6 +10,13 @@ video you your system clipboard with just one click
 - Html
 - Css 
 - Javascript 
+
+## Useful links
+
+- [Git Repo](https://github.com/pawanhirumina/yt-transcript-yoinker)
+- [Website](https://pawanhirumina.github.io/yt-transcript-yoinker/)
+- [Extension Page](https://addons.mozilla.org/en-US/firefox/addon/youtube-transcript-yoinker/) 
+
 
 ## ScreenShots
 
