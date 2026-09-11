@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "YouTube Transcript Yoinker",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Pawan Hirumina",
   "description": "Yoink YouTube transcripts to your clipboard.",
   "permissions": [
