@@ -8,8 +8,49 @@
     --muted: #9B9B9B;
     --muted2: #6B6B6B;
     --accent: #FF7139;
+    --btn-bg: #f90130;
   }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(0 0% 85%) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: hsl(0 0% 85%);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: hsl(0 0% 75%);
+}
+
+/* Hide scrollbar for sidebar but keep scroll */
+.sidebar-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.sidebar-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Show on hover only */
+.sidebar-scroll:hover {
+  scrollbar-width: thin;
+}
+.sidebar-scroll:hover::-webkit-scrollbar {
+  display: block;
+  width: 4px;
+}
   * {
     margin: 0;
     padding: 0;
@@ -83,7 +124,10 @@
   .hero .youtube {
     background: #f90130;
     padding: 3px;
-  }
+    cursor: pointer;
+    text-decoration: underline;
+  } 
+ 
 
   .badge {
     display: inline-flex;
@@ -330,12 +374,11 @@
   }
 
   .btn-firefox {
-    appearance: none;
-    background: var(--text);
-    color: #0a0a0a;
+    background: linear-gradient(165deg,  #fca632, #f3294e);
+    color: #fff;
     border: none;
     border-radius: 10px;
-    padding: 13px 20px;
+    padding: 6px 12px;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -346,12 +389,10 @@
     transition: transform .12s, opacity .12s;
   }
   .btn-github {
-    appearance: none;
-    background: transparent;
-    color: #fff;
-    border: 1px solid #fff;
+   color: #fff;
+    border: 1px solid white;
     border-radius: 10px;
-    padding: 13px 20px;
+    padding: 6px 12px;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -386,9 +427,10 @@
 
   footer {
     display: flex;
+    width: 100%;
     justify-content: space-between;
+    align-items: center;
     gap: 16px;
-    padding-bottom: 40px;
     font-size: 12px;
     color: var(--muted2);
     font-family: ui-monospace, monospace;
@@ -396,8 +438,12 @@
 
   .footer-links {
     display: flex;
-    gap: 5px;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 1rem;
   }
+
+
 
   @media(max-width:600px) {
     h1 {
@@ -429,8 +475,10 @@
     }
 
     footer {
+      width: 100%;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
     }
 
     footer .footer-links {
