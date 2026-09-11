@@ -8,8 +8,11 @@ button { background: red; color: white; border: 0; padding: 10px 20px; border-ra
 </head>
 <body>
   <h3>YT Yoinker</h3>
-  <p>Go to a YouTube video and click <b>Yoink Transcript</b> button to copy the video transcript to your clipboard.</p>
-  <button id="yoink">Yoink from popup</button>
+    <label style="display:flex;align-items:center;gap:8px;margin:10px 0;">
+  <input type="checkbox" id="timestamps">
+  Include timestamps
+</label>
+  <button id="yoink">Yoink Transcript</button>
   <script src="popup.js"></script>
 </body>
 </html>
