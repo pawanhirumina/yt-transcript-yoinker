@@ -31,8 +31,8 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ steps.version.outputs.VERSION }}
-          name: Release v${{ steps.version.outputs.VERSION }}
-          files: extension-${{ steps.version.outputs.VERSION }}.zip
+          name: v${{ steps.version.outputs.VERSION }}
+          files: yt-transcript-yoinker-${{ steps.version.outputs.VERSION }}.zip
           generate_release_notes: true
           draft: false
           prerelease: false
