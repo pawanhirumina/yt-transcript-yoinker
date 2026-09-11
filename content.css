@@ -15,7 +15,8 @@
 
 #yoinker-toast-container {
   position: fixed;
-  bottom: 24px;
+  top: 24px !important;
+  bottom: auto !important;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999999;
@@ -31,7 +32,7 @@
   font-weight: 500;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(-20px);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;

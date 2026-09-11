@@ -25,10 +25,6 @@ function showToast(text, duration = 3000) {
   }, duration);
 }
 
-
-
-
-
 async function openTranscript() {
   const expand =
     document.querySelector("#expand") ||
@@ -239,7 +235,7 @@ function addYoinkButton() {
 
   btn.id = "yt-yoink-btn";
   btn.type = "button";
-  btn.textContent = "📋 Yoink Transcript";
+  btn.textContent = "Yoink Transcript";
 
   btn.style.cssText = `
     background: #ff0000 !important;
