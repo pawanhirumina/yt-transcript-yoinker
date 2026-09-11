@@ -1,0 +1,40 @@
+name: Zip + Release Extension
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch: 
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get version from manifest.json
+        id: version
+        run: |
+          VERSION=$(jq -r '.version' manifest.json)
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "Found version: $VERSION"
+
+      - name: Create extension zip
+        run: |
+          zip -r extension-${{ steps.version.outputs.VERSION }}.zip . \
+            -x "docs/*" ".git/*" ".github/*" "node_modules/*" "*.md" "zip-release.yml" "extension-*.zip" "src/"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.version.outputs.VERSION }}
+          name: Release v${{ steps.version.outputs.VERSION }}
+          files: extension-${{ steps.version.outputs.VERSION }}.zip
+          generate_release_notes: true
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
