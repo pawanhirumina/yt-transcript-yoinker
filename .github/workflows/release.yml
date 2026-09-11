@@ -1,4 +1,4 @@
-name: Zip + Release Extension
+name: Release Extension
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Create extension zip
         run: |
-          zip -r extension-${{ steps.version.outputs.VERSION }}.zip . \
+          zip -r yt-transcript-yoinker-${{ steps.version.outputs.VERSION }}.zip . \
             -x "docs/*" ".git/*" ".github/*" "node_modules/*" "*.md" "zip-release.yml" "extension-*.zip" "src/"
 
       - name: Create GitHub Release

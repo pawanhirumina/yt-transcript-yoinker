@@ -5,4 +5,9 @@ document.getElementById('yoink').onclick = async () => {
   });
 };
 
+
+const cb = document.getElementById('timestamps');
+browser.storage.local.get('includeTimestamps').then(r => cb.checked = r.includeTimestamps === true);
+cb.onchange = () => browser.storage.local.set({ includeTimestamps: cb.checked });
+
 console.log("Yoinker Loaded")

@@ -43,7 +43,7 @@
     <div class="top">
       <div class="top-left"><span class="dot"></span> <a
           href="https://github.com/pawanhirumina/yt-transcript-yoinker">yt-transcript-yoinker</a></div>
-      <div class="top-right" > v1.0.5 / firefox</div>
+      <div class="top-right" > v1.2.5 / firefox</div>
     </div>
 
     <div class="hero">
@@ -57,11 +57,13 @@
         <div class="cta-row">
           <div>
 
-            <a href="https://addons.mozilla.org/en-US/firefox/addon/youtube-transcript-yoinker/" 
-              style="text-decoration:none">
-                <img src="https://blog.mozilla.org/addons/files/2015/11/get-the-addon-small.png" alt="">
+            <a class="btn-firefox " onclick="return false;" href="https://addons.mozilla.org/en-US/firefox/addon/youtube-transcript-yoinker/" 
+              style="text-decoration:none"><i class="fa-brands fa-firefox-browser"></i>Get addon
             </a>
-            
+            <a class="btn-github" href="https://github.com/pawanhirumina/yt-transcript-yoinker" 
+              style="text-decoration:none"><i class="fa-brands fa-github"></i>View on github
+            </a>
+
           </div>
 
         </div>
@@ -70,13 +72,15 @@
         <div class="mock-wrap">
           <video loading="lazy" 
               autoplay 
-              loop
-              muted
-              playsinline
+              loop 
+              muted 
+              playsinline 
+              nocontrols
               preload="metadata"
+              width="100%"
             >
-            <source src="src/demo.webm" type="video/webm">
             <source src="src/demo.mp4" type="video/mp4">
+            <source src="src/demo.webm" type="video/webm">
           </video>
         </div>
         <div class="why">
@@ -89,9 +93,9 @@
         </div>
         <div class="grid">
           <div><span>One-click copy</span> <em>→ clipboard</em></div>
-          <div><span>Removes timestamps</span> <em>clean text</em></div>
+          <div><span>Full transcript</span> <em>no truncation</em></div>
           <div><span>Works on video pages</span> <em>auto-opens</em></div>
-          <div><span>Plain text output</span> <em>.txt ready</em></div>
+          <div><span>Timestamp toggle</span> <em>with/without time</em></div>
           <div><span>Lightweight</span> <em>&lt; 20kb</em></div>
           <div><span>Privacy-first</span> <em>local only</em></div>
         </div>

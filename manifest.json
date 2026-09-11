@@ -1,13 +1,14 @@
 {
   "manifest_version": 2,
   "name": "YouTube Transcript Yoinker",
-  "version": "1.0.5",
+  "version": "1.2.5",
   "author": "Pawan Hirumina",
   "description": "Yoink YouTube transcripts to your clipboard.",
   "permissions": [
     "clipboardWrite",
     "activeTab",
-    "*://*.youtube.com/*"
+    "*://*.youtube.com/*",
+    "storage"
   ],
   "browser_specific_settings": {
     "gecko": {
