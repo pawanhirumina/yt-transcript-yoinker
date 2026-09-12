@@ -1,4 +1,40 @@
-  :root {
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Transcript Yoinker - Copy YouTube Transcripts in One Click | Free Firefox Add-on</title>
+  <meta name="description"
+    content="Free Firefox add-on to copy YouTube transcripts in one click. Removes timestamps, copies clean plain text to clipboard. 100% private, no account needed, works locally.">
+  <meta name="keywords"
+    content="youtube transcript, copy youtube transcript, youtube transcript downloader, get youtube transcript, youtube transcript extractor">
+  <meta name="author" content="Pawan Hirumina">
+  <link rel="canonical" href="https://pawanhirumina.dev/yt-transcript-yoinker/">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <meta property="og:title" content="YouTube Transcript Yoinker - One-Click Transcript Copier">
+  <meta property="og:description"
+    content="Copy clean YouTube transcripts to clipboard with one click. No timestamps, no tracking.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./og-image.png">
+  <link rel="shortcut icon" href="./src/favicon.ico" type="image/ico">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "YouTube Transcript Yoinker",
+  "operatingSystem": "Firefox",
+  "applicationCategory": "BrowserApplication",
+  "offers": {"@type": "Offer", "price": "0"},
+  "description": "Copy YouTube video transcripts to clipboard with one click. Removes timestamps and copies clean text locally.",
+  "author": {"@type": "Person", "name": "Pawan Hirumina", "url": "https://pawanhirumina.dev"}
+}
+</script>
+<style>
+ :root {
     --bg: #0a0a0a;
     --card: #141414;
     --card2: #171717;
@@ -110,6 +146,8 @@
   }
 
   .hero {
+ width: 100%;
+ height: 100vh;
     padding: 96px 0 48px;
     text-align: center;
     display: flex;
@@ -163,6 +201,7 @@
   p {
     font-size: 15.5px;
     margin: 20px 16px;
+ line-height: 1.5;
   }
 
   h1 span.muted {
@@ -170,93 +209,6 @@
     font-weight: 450
   }
 
-
-  .mock-wrap {
-    margin-top: 40px;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    background: var(--card);
-    overflow: hidden;
-  }
-
-  .mock-wrap video {
-    width: 100%;
-    height: auto;
-  }
-
-  .btn-yoink {
-    background: #1c1c1c;
-    color: var(--text);
-    border: 1px solid var(--border2);
-    border-radius: 999px;
-    padding: 7px 13px;
-    font-size: 12.5px;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: ui-monospace, monospace;
-  }
-
-  .btn-yoink i {
-    font-style: normal;
-    background: var(--text);
-    color: #000;
-    width: 18px;
-    height: 18px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    font-size: 11px;
-  }
-
-  .copy {
-    font-size: 15.5px;
-    line-height: 1.65;
-    color: var(--muted);
-    letter-spacing: -0.01em;
-  }
-
-  .grid {
-    margin-top: 32px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
-  .grid div {
-    padding: 14px 16px;
-    font-size: 13.5px;
-    line-height: 1.4;
-    border-bottom: 1px solid var(--border);
-    border-right: 1px solid var(--border);
-    color: var(--muted);
-    display: flex;
-    gap: 10px;
-  }
-
-  .grid div:nth-child(2n) {
-    border-right: none
-  }
-
-  .grid div:nth-last-child(-n+2) {
-    border-bottom: none
-  }
-
-  .grid div span {
-    color: var(--text);
-    font-weight: 500
-  }
-
-  .grid div em {
-    font-style: normal;
-    color: var(--muted2);
-    font-family: ui-monospace, monospace;
-    font-size: 12px;
-    margin-left: auto;
-  }
 
   .cta-row {
     margin-top: 32px;
@@ -306,79 +258,72 @@
     transform: translateY(-1px);
     opacity: .95
   }
+.cta-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: fit-content;
+  margin: 0 auto;
+}
+.cta-top {
+  display: flex;
+  gap: 12px;
+}
+.btn-back {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform .12s, opacity .12s;
+}
+.btn-back:hover {
+  transform: translateY(-1px);
+  opacity: .95;
+  background: var(--card2);
+}
 
-  .cta-hint {
-    font-size: 12.5px;
-    color: var(--muted2);
-    font-family: ui-monospace, monospace;
-    line-height: 1.5;
-  }
 
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 56px 0 20px
-  }
-
-  footer {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    font-size: 12px;
-    color: var(--muted2);
-    font-family: ui-monospace, monospace;
-  }
-
-  .footer-links {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    font-size: 1rem;
-  }
+</style>
+</head>
 
 
+<body>
+  <div class="wrap">
+  
+    <div class="hero">
+      <div class="hero-content">
 
-  @media(max-width:600px) {
-    h1 {
-      font-size: 40px
-    }
+        <h1>Yoink! This transcript doesn't exist.</h1>
 
-    .sub {
-      font-size: 17px
-    }
+          <p>Looks like you tried to yoink a page that isn't here. The video you’re looking for may have been deleted, or the link was copied wrong. While you're here, why not go yoink a real one? <a style="color: red;" href="https://youtu.be/QDia3e12czc?si=0Dcn9e_EdluIKE_8">Youtube</a> </p>
+   <div class="cta-row">
+  <div class="cta-stack">
+    <div class="cta-top">
+      <a class="btn-firefox" href="https://addons.mozilla.org/en-US/firefox/addon/youtube-transcript-yoinker/" style="text-decoration:none">
+        <i class="fa-brands fa-firefox-browser"></i>Get addon
+      </a>
+      <a class="btn-github" href="https://github.com/pawanhirumina/yt-transcript-yoinker" style="text-decoration:none">
+        <i class="fa-brands fa-github"></i>View on github
+      </a>
+    </div>
+    
+    <a class="btn-back" href="index.html" style="text-decoration:none">
+      <i class="fa-solid fa-arrow-left"></i> Back to Homepage
+    </a>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</body>
 
-    .grid {
-      grid-template-columns: 1fr
-    }
-
-    .grid div {
-      border-right: none
-    }
-
-    .grid div:nth-last-child(-n+2) {
-      border-bottom: 1px solid var(--border)
-    }
-
-    .grid div:last-child {
-      border-bottom: none
-    }
-
-    .hero {
-      padding-top: 56px
-    }
-
-    footer {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    footer .footer-links {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
+</html>
