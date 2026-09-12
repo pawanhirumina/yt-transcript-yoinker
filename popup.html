@@ -2,17 +2,70 @@
 <html>
 <head>
 <style>
-body { width: 200px; padding: 15px; font-family: sans-serif; text-align: center; }
-button { background: red; color: white; border: 0; padding: 10px 20px; border-radius: 20px; cursor: pointer; width: 100%; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  width: 260px;
+  padding: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #fff;
+  color: #111;
+  transition: all 0.2s;
+}
+body.dark { background: #121212; color: #eee; }
+h3 { font-size: 18px; margin-bottom: 16px; text-align: left; }
+.input-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #d8d9d74d;
+}
+body.dark.input-field { border-color: #2a2a2a; }
+.input-field label { font-size: 13px; font-weight: 500; cursor: pointer; }
+.switch { position: relative; width: 42px; height: 26px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #e5e5e5; transition:.3s; border-radius: 26px;
+}
+.slider:before {
+  position: absolute; content: ""; height: 22px; width: 22px; left: 2px; bottom: 2px;
+  background-color: white; transition:.3s; border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+input:checked +.slider { background-color: #ff0000; }
+body.dark input:checked +.slider { background-color: #333; }
+input:checked +.slider:before { transform: translateX(16px); }
+button#yoink {
+  background: #ff0000; color: white; border: 0; padding: 12px; border-radius: 10px;
+  cursor: pointer; width: 100%; font-weight: 600; margin-top: 16px; font-size: 14px;
+}
+button#yoink:hover { background: #d90000; }
+button#yoink:disabled{opacity:0.6;cursor:not-allowed;}
+body.dark button#yoink { background: #fff; color: #000; }
+#status{text-align:center;font-size:11px;margin-top:10px;min-height:14px;color:#666;}
+body.dark #status{color:#aaa;}
+code { display: block; text-align: center; margin-top: 12px; font-size: 10px; color: #999; }
 </style>
 </head>
 <body>
   <h3>YT Yoinker</h3>
-    <label style="display:flex;align-items:center;gap:8px;margin:10px 0;">
-  <input type="checkbox" id="timestamps">
-  Include timestamps
-</label>
-  <button id="yoink">Yoink Transcript</button>
+  <div class="input-field">
+    <label for="timestamps">Include timestamps</label>
+    <label class="switch"><input type="checkbox" id="timestamps"><span class="slider"></span></label>
+  </div>
+  <div class="input-field">
+    <label for="darkMode">Enable Darkmode</label>
+    <label class="switch"><input type="checkbox" id="darkMode"><span class="slider"></span></label>
+  </div>
+  <div class="input-field">
+    <label for="hideButton">Hide button</label>
+    <label class="switch"><input type="checkbox" id="hideButton"><span class="slider"></span></label>
+  </div>
+  <button id="yoink">Yoink</button>
+  <div id="status"></div>
+  <code>v2.2.5</code>
   <script src="popup.js"></script>
 </body>
 </html>

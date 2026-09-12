@@ -1,9 +1,17 @@
 {
   "manifest_version": 2,
   "name": "YouTube Transcript Yoinker",
-  "version": "1.2.5",
+  "version": "2.2.5",
+  "icons": {
+      "16": "assets/16.png",
+      "32": "assets/32.png",
+      "48": "assets/48.png",
+      "128": "assets/128.png"
+    },
   "author": "Pawan Hirumina",
   "description": "Yoink YouTube transcripts to your clipboard.",
+  "homepage_url": "https://pawanhirumina.github.com/yt-transcript-yoinker",
+  "author": "pawanhirumina.dev",
   "permissions": [
     "clipboardWrite",
     "activeTab",
@@ -12,7 +20,7 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "youtube-transcript-yoinker@example.com",
+      "id": "youtube-transcript-yoinker@pawanhirumina.dev",
       "data_collection_permissions": {
         "required": ["none"]
       }

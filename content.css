@@ -42,3 +42,11 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+
+#yt-yoink-btn {
+  font-family: Roboto, Arial, sans-serif !important;
+}
+#yt-yoink-btn:hover {
+  opacity: 0.9;
+}
