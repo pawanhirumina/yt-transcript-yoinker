@@ -15,7 +15,7 @@ video you your system clipboard with just one click
 
 - [Git Repo](https://github.com/pawanhirumina/yt-transcript-yoinker)
 - [Website](https://pawanhirumina.github.io/yt-transcript-yoinker/)
-- [Extension Page](https://addons.mozilla.org/en-US/firefox/addon/youtube-transcript-yoinker/) 
+- [Extension Page](https://addons.mozilla.org/en-US/firefox/addon/yt-transcript-yoinker/) 
 
 
 ## ScreenShots
