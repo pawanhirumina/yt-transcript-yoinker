@@ -1,0 +1,23 @@
+[
+  {
+    "version": "v2.2.5",
+    "date": "Sep 12 2025",
+    "notes": "redesigned the popup & added button toggle",
+    "firefox": "https://addons.mozilla.org/en-US/firefox/addon/yt-transcript-yoinker/",
+    "github": "https://github.com/pawanhirumina/yt-transcript-yoinker/releases/tag/v2.2.5"
+  },
+  {
+    "version": "v1.2.5",
+    "date": "Sep 10 2025",
+    "notes": "minor fixes and improvements",
+    "firefox": null,
+    "github": "https://github.com/pawanhirumina/yt-transcript-yoinker/releases/tag/v1.2.5"
+  },
+  {
+    "version": "v1.0.5",
+    "date": "Sep 2025",
+    "notes": "fix: fixed the json error for distribution",
+    "firefox": null,
+    "github": "https://github.com/pawanhirumina/yt-transcript-yoinker/releases/tag/v1.0.5"
+  }
+]

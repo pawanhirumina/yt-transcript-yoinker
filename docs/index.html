@@ -1,127 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YouTube Transcript Yoinker - Copy YouTube Transcripts in One Click | Free Firefox Add-on</title>
-  <meta name="description"
-    content="Free Firefox add-on to copy YouTube transcripts in one click. Removes timestamps, copies clean plain text to clipboard. 100% private, no account needed, works locally.">
-  <meta name="keywords"
-    content="youtube transcript, copy youtube transcript, youtube transcript downloader, get youtube transcript, youtube transcript extractor">
+  <meta name="description" content="Free Firefox add-on to copy YouTube transcripts in one click. Removes timestamps, copies clean plain text to clipboard. 100% private, no account needed, works locally.">
+  <meta name="keywords" content="youtube transcript, copy youtube transcript, youtube transcript downloader, get youtube transcript, youtube transcript extractor">
   <meta name="author" content="Pawan Hirumina">
   <link rel="canonical" href="https://pawanhirumina.dev/yt-transcript-yoinker/">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <meta property="og:title" content="YouTube Transcript Yoinker - One-Click Transcript Copier">
-  <meta property="og:description"
-    content="Copy clean YouTube transcripts to clipboard with one click. No timestamps, no tracking.">
+  <meta property="og:description" content="Copy clean YouTube transcripts to clipboard with one click. No timestamps, no tracking.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="./og-image.png">
+  <link rel="stylesheet" type="" href="main.css">
   <link rel="shortcut icon" href="./src/favicon.ico" type="image/ico">
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "YouTube Transcript Yoinker",
-  "operatingSystem": "Firefox",
-  "applicationCategory": "BrowserApplication",
-  "offers": {"@type": "Offer", "price": "0"},
-  "description": "Copy YouTube video transcripts to clipboard with one click. Removes timestamps and copies clean text locally.",
-  "author": {"@type": "Person", "name": "Pawan Hirumina", "url": "https://pawanhirumina.dev"}
-}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YouTube Transcript Yoinker","operatingSystem":"Firefox","applicationCategory":"BrowserApplication","offers":{"@type":"Offer","price":"0"},"description":"Copy YouTube video transcripts to clipboard with one click. Removes timestamps and copies clean text locally.","author":{"@type":"Person","name":"Pawan Hirumina","url":"https://pawanhirumina.dev"}}
 </script>
 
-  <link rel="stylesheet" href="./main.css">
+<script>
+  async function loadVersions() {
+    const list = document.getElementById('versions-list');
+    if (!list) {
+      console.error('Missing #versions-list in HTML');
+      return;
+    }
+
+    try {
+      const res = await fetch('./versions.json?v=' + Date.now());
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+
+      const data = await res.json();
+      console.log('versions.json loaded:', data);
+
+      const versions = Array.isArray(data) ? data : data.versions || [];
+
+      if (!versions.length) {
+        list.innerHTML = '<div style="color:#999">No versions yet</div>';
+        return;
+      }
+
+      list.innerHTML = versions.map(v => {
+        const firefoxBtn = v.firefox ? `<a class="v-firefox" href="${v.firefox}" target="_blank" rel="noopener">Firefox</a>` : '';
+        const githubBtn = v.github ? `<a class="v-github" href="${v.github}" target="_blank" rel="noopener">GitHub</a>` : '';
+        const actions = (firefoxBtn || githubBtn) 
+          ? `<div class="v-actions">${firefoxBtn}${githubBtn}</div>` 
+          : `<div style="font-size:11px;color:#555">No public release</div>`;
+
+        return `
+          <div class="version-row">
+            <div class="v-tag">${v.version ?? ''}</div>
+            <div class="v-date">${v.date ?? ''}</div>
+            <div class="v-notes">${v.notes ?? ''}</div>
+            ${actions}
+          </div>`;
+      }).join('');
+
+    } catch (err) {
+      console.error('loadVersions failed', err);
+      list.innerHTML = `<div style="color:#ff6b6b">Failed to load: ${err.message}</div>`;
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadVersions);
+  } else {
+    loadVersions();
+  }
+</script>
+
+
 </head>
-
-
 <body>
-  <div class="wrap">
-    <div class="top">
-      <div class="top-left"><span class="dot"></span> <a
-          href="https://github.com/pawanhirumina/yt-transcript-yoinker">yt-transcript-yoinker</a></div>
-      <div class="top-right" > v2.2.5 / firefox</div>
-    </div>
+<div class="wrap">
+<div class="top">
+<div class="top-left"></div>
+<div class="top-right">v2.2.5</div>
+</div>
+<div class="hero">
+<div class="hero-content">
+<div class="badge">Free Firefox Add-on · 100% Private</div>
+<h1>Copy Any <span class="youtube">Youtube</span> Transcript in One Click</h1>
+<p class="copy">Tired of manually copying YouTube transcripts? <strong>YouTube Transcript Yoinker</strong> adds a “Yoink Transcript” button next to Subscribe. One click to auto-open, clean timestamps, and copy plain text to your clipboard.</p>
+<div class="cta-row">
+<div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+<a class="btn-firefox" href="https://addons.mozilla.org/en-US/firefox/addon/yt-transcript-yoinker/" target="_blank" rel="noopener"><i class="fa-brands fa-firefox-browser"></i>Get addon</a>
+<a class="btn-github" href="https://github.com/pawanhirumina/yt-transcript-yoinker" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>View on github</a>
+</div>
+</div>
+<div class="mock-wrap">
+<video autoplay loop muted playsinline preload="metadata"><source src="src/demo.mp4" type="video/mp4"><source src="src/demo.webm" type="video/webm"></video>
+</div>
+<div class="why">
+<h2 style="font-size:22px;font-weight:600;letter-spacing:-0.02em">Why use <span class="youtube">Yoinker?</span></h2>
+<p class="copy">Unlike online transcript downloaders, Yoinker does everything <strong>locally in your browser</strong>. No external server, no account, no tracking. Perfect for students, researchers, and creators who need clean transcripts for notes and summaries.</p>
+</div>
+<div class="grid">
+<div><span>One-click copy</span> <em>→ clipboard</em></div>
+<div><span>Full transcript</span> <em>no truncation</em></div>
+<div><span>Works on video pages</span> <em>auto-opens</em></div>
+<div><span>Timestamp toggle</span> <em>with/without time</em></div>
+<div><span>Lightweight</span> <em>&lt; 20kb</em></div>
+<div><span>Privacy-first</span> <em>local only</em></div>
+</div>
+<div class="divider"></div>
 
-    <div class="hero">
-      <div class="hero-content">
-
-        <div class="badge">Free Firefox Add-on · 100% Private</div>
-        <h1>Copy Any <span class="youtube">Youtube</span> Transcript in One Click</h1>
-        <p class="copy">Tired of manually copying YouTube transcripts? <strong>YouTube Transcript Yoinker</strong> adds
-          a “Yoink Transcript” button next to Subscribe. One click to auto-open, clean timestamps, and copy plain text
-          to your clipboard.</p>
-        <div class="cta-row">
-          <div>
-
-            <a class="btn-firefox " onclick="return false;" href="https://addons.mozilla.org/en-US/firefox/addon/yt-transcript-yoinker/" 
-              style="text-decoration:none"><i class="fa-brands fa-firefox-browser"></i>Get addon
-            </a>
-            <a class="btn-github" href="https://github.com/pawanhirumina/yt-transcript-yoinker" 
-              style="text-decoration:none"><i class="fa-brands fa-github"></i>View on github
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <div class="mock-wrap">
-          <video loading="lazy" 
-              autoplay 
-              loop 
-              muted 
-              playsinline 
-              preload="metadata"
-              width="100%"
-            >
-            <source src="src/demo.mp4" type="video/mp4">
-            <source src="src/demo.webm" type="video/webm">
-          </video>
-        </div>
-        <div class="why">
-          <h2>Why use  <span class="youtube">Yoinker?</span></h2>
-          <p class="copy">
-            Unlike online transcript downloaders, Yoinker does everything <strong>locally in your browser</strong>. No
-            external server, no account, no tracking. Perfect for students, researchers, and creators who need clean
-            transcripts for notes and summaries.
-          </p>
-        </div>
-        <div class="grid">
-          <div><span>One-click copy</span> <em>→ clipboard</em></div>
-          <div><span>Full transcript</span> <em>no truncation</em></div>
-          <div><span>Works on video pages</span> <em>auto-opens</em></div>
-          <div><span>Timestamp toggle</span> <em>with/without time</em></div>
-          <div><span>Lightweight</span> <em>&lt; 20kb</em></div>
-          <div><span>Privacy-first</span> <em>local only</em></div>
-        </div>
-
-        
-
-      
-
-        <div class="divider"></div>
-
-
-        <footer>               
-          <div>Built by <a href="https://pawanhirumina.dev">Pawan Hirumina</a></div>
-          <div class="">
-            <a class="" href="https://github.com/pawanhirumina/yt-transcript-yoinker">Github Repo</a> |
-            <a class="" href="https://addons.mozilla.org/en-US/firefox/addon/yt-transcript-yoinker/">Get Addon</a> |
-            <a class="" href="https://github.com/pawanhirumina/yt-transcript-yoinker/issues">Report</a>
-          </div>
-          <div class="">
-            <a href="https://www.paypal.com/ncp/payment/TR8LMVU7FXPDG">Support</a>
-          </div>
-        </footer>
-
-
-      </div>
-    </div>
-  </div>
+<div class="versions">
+  <div class="versions-head"><h2>Changelog</h2><span>firefox & github releases</span></div>
+  <div id="versions-list">Loading</div>
+</div>
+<footer>
+<div>Built by <a href="https://pawanhirumina.dev">Pawan Hirumina</a></div>
+<div style="display:flex;gap:10px"><a href="https://github.com/pawanhirumina/yt-transcript-yoinker">Github Repo</a> | <a href="https://addons.mozilla.org/en-US/firefox/addon/yt-transcript-yoinker/">Get Addon</a> | <a href="https://github.com/pawanhirumina/yt-transcript-yoinker/issues">Report</a></div>
+<div><a href="https://www.paypal.com/ncp/payment/TR8LMVU7FXPDG">Support</a></div>
+</footer>
+</div>
+</div>
+</div>
 </body>
-
 </html>
