@@ -1,0 +1,9 @@
+# .github/ISSUE_TEMPLATE/config.yml
+blank_issues_enabled: false
+contact_links:
+    - name: 💡 Feature Request
+    url: https://github.com/pawanhirumina/yt-transcript-yoinker/issues/new?template=feature_request.yml
+    about: Suggest an idea for Yoinker
+    - name: 🦊 Firefox Add-on Page
+    url: https://addons.mozilla.org/en-US/firefox/addon/yt-transcript-yoinker/
+    about: Leave a review or get the latest version

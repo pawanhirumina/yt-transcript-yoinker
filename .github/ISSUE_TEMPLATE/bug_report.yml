@@ -1,0 +1,126 @@
+name: 🐛 Bug Report
+description: Report a bug with yt-transcript-yoinker
+title: "[BUG] "
+labels: ["bug"]
+assignees: ["pawanhirumina"]
+
+body:
+    - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please fill this out so I can reproduce and fix it quickly.
+        If the button doesn't appear, check if the video actually has a transcript first.
+
+    - type: input
+    id: extension-version
+    attributes:
+      label: Extension Version
+      description: "Find it at about:addons or from the README. e.g. v2.2.5"
+      placeholder: "e.g. v2.2.5"
+    validations:
+      required: true
+
+    - type: input
+    id: firefox-version
+    attributes:
+      label: Firefox Version
+      description: "Go to about:support to find your version"
+      placeholder: "e.g. 135.0"
+    validations:
+      required: true
+
+    - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+                - Windows
+                - macOS
+                - Linux
+                - Other
+    validations:
+      required: true
+
+    - type: input
+    id: youtube-url
+    attributes:
+      label: YouTube URL where bug occurred
+      description: "Paste the video URL. If it's private/unlisted, provide a similar public video if possible"
+      placeholder: "https://www.youtube.com/watch?v=..."
+    validations:
+      required: false
+
+    - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: "What happened?"
+      placeholder: "The Copy Transcript button appears but nothing is copied / button doesn't show even though transcript exists..."
+    validations:
+      required: true
+
+    - type: textarea
+    id: steps
+    attributes:
+      label: Steps To Reproduce
+      description: "How can I reproduce it?"
+      placeholder: |
+                1. Go to '...'
+                2. Click on '...'
+                3. Scroll down to '...'
+                4. See error
+      value: |
+                1. Go to '...'
+                2. Click on '...'
+                3. ...
+    validations:
+      required: true
+
+    - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: "What did you expect to happen?"
+      placeholder: "The transcript should be copied to clipboard with timestamps"
+    validations:
+      required: true
+
+    - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: "What actually happened?"
+    validations:
+      required: true
+
+    - type: textarea
+    id: logs
+    attributes:
+      label: Console Logs / Errors (optional)
+      description: "Press Ctrl+Shift+J (Cmd+Shift+J on Mac) in Firefox, filter for 'yoinker' and paste any errors"
+      render: shell
+      placeholder: "No errors / Paste logs here"
+    validations:
+      required: false
+
+    - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+                - label: "I checked if the video actually has a transcript (via YouTube's ... > Show transcript)"
+          required: true
+                - label: "I tried disabling other YouTube extensions to rule out conflicts"
+          required: false
+                - label: "I am using the latest version of the extension from AMO"
+          required: true
+                - label: "I searched existing issues to avoid duplicates"
+          required: true
+
+    - type: textarea
+    id: extra
+    attributes:
+      label: Additional Context
+      description: "Screenshots, screen recording, or anything else?"
+    validations:
+      required: false
