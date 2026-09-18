@@ -1,103 +1,66 @@
 name: Bug Report
 description: Report a bug with yt-transcript-yoinker
 title: "[BUG] "
-labels: ["bug"]
-assignees: ["pawanhirumina"]
+labels: bug
 
 body:
-    - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to fill this out! If the button doesn't appear, please check if the video actually has a transcript first (YouTube > ... > Show transcript).
+- type: markdown
+  attributes:
+    value: |
+      Thanks for taking the time to fill this out! If the button doesn't appear, please check if the video actually has a transcript first (YouTube > ... > Show transcript).
 
-    - type: input
-    id: extension_version
-    attributes:
-      label: Extension Version
-      description: Find it at about:addons. e.g. v2.2.5
-      placeholder: v2.2.5
-    validations:
-      required: true
+- type: input
+  id: extension_version
+  attributes:
+    label: Extension Version
+    description: Find it at about:addons
+    placeholder: v2.2.5
+  validations:
+    required: true
 
-    - type: input
-    id: firefox_version
-    attributes:
-      label: Firefox Version
-      description: Find it at about:support
-      placeholder: "135.0"
-    validations:
-      required: true
+- type: input
+  id: firefox_version
+  attributes:
+    label: Firefox Version
+    placeholder: "135.0"
+  validations:
+    required: true
 
-    - type: dropdown
-    id: os
-    attributes:
-      label: Operating System
-      description: What OS are you on?
-      options:
-                - Windows
-                - macOS
-                - Linux
-                - Other
-    validations:
-      required: true
+- type: dropdown
+  id: os
+  attributes:
+    label: Operating System
+    options:
+      - Windows
+      - macOS
+      - Linux
+      - Other
+  validations:
+    required: true
 
-    - type: input
-    id: youtube_url
-    attributes:
-      label: YouTube URL
-      description: The URL where the bug happened, if applicable
-      placeholder: https://www.youtube.com/watch?v=...
-    validations:
-      required: false
+- type: textarea
+  id: description
+  attributes:
+    label: Bug Description
+  validations:
+    required: true
 
-    - type: textarea
-    id: description
-    attributes:
-      label: Bug Description
-      description: A clear description of what the bug is
-    validations:
-      required: true
+- type: textarea
+  id: repro_steps
+  attributes:
+    label: Steps to Reproduce
+    value: |
+      1. Go to '...'
+      2. Click on '...'
+      3. See error
+  validations:
+    required: true
 
-    - type: textarea
-    id: repro_steps
-    attributes:
-      label: Reproduction Steps
-      description: How do you trigger this bug? Walk us through it step by step.
-      value: |
-                1. Go to '...'
-                2. Click on '...'
-                3. See error
-      render: bash
-    validations:
-      required: true
+- type: textarea
+  id: expected
+  attributes:
+    label: Expected Behavior
+  validations:
+    required: true
 
-    - type: textarea
-    id: expected
-    attributes:
-      label: Expected Behavior
-      description: What did you expect to happen?
-    validations:
-      required: true
 
-    - type: textarea
-    id: logs
-    attributes:
-      label: Console Logs
-      description: Press Ctrl+Shift+J (Cmd+Shift+J on Mac) and paste any errors related to Yoinker
-      render: shell
-    validations:
-      required: false
-
-    - type: checkboxes
-    id: checks
-    attributes:
-      label: Checklist
-      options:
-                - label: I verified the video has a transcript
-          required: true
-                - label: I tried with other YouTube extensions disabled
-          required: false
-                - label: I searched existing issues to avoid duplicates
-          required: true
-                - label: I am using the latest version from AMO
-          required: true
