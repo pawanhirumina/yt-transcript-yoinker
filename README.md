@@ -75,6 +75,8 @@ Manually opening YouTube’s transcript panel, selecting all text, and copying i
 ## 📸 Screenshots
 
 ![screenshot of the extension](./src/screenshot.png)
+![screenshot of the extension](./src/screenshot2.png)
+![screenshot of the extension](./src/screenshot3.png)
 
 *The “Copy Transcript” button appears in the YouTube UI.*
 
