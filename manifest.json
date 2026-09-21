@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "YouTube Transcript Yoinker",
-  "version": "2.2.5",
+  "version": "2.3.5",
   "icons": {
       "16": "assets/16.png",
       "32": "assets/32.png",
@@ -16,11 +16,14 @@
     "clipboardWrite",
     "activeTab",
     "*://*.youtube.com/*",
-    "storage"
+    "storage",
+    "downloads",
+    "scripting"
+
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "youtube-transcript-yoinker@pawanhirumina.dev",
+      "id": "youtubetranscriptyoinker@pawanhirumina.dev",
       "data_collection_permissions": {
         "required": ["none"]
       }
