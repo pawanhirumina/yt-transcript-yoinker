@@ -1,5 +1,5 @@
 # 🎥 YouTube Transcript Yoinker  
-**Version:** v2.2.5  
+**Version:** v2.3.5  
 
 Copy YouTube video transcripts to your system clipboard with a single click—no account, no external service required.
 
