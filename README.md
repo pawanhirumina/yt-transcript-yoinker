@@ -1,5 +1,5 @@
 # 🎥 YouTube Transcript Yoinker  
-**Version:** v2.2.5  
+**Version:** v2.3.5  
 
 Copy YouTube video transcripts to your system clipboard with a single click—no account, no external service required.
 
@@ -25,7 +25,7 @@ Manually opening YouTube’s transcript panel, selecting all text, and copying i
 | **One‑click copy** | A single button copies the entire transcript to the clipboard. |
 | **Works only when a transcript exists** | The button appears only for videos that actually have a transcript, avoiding dead clicks. |
 | **No external services** | All processing happens locally in the browser—your data never leaves your machine. |
-| **Lightweight** | < 15 KB packed size, minimal impact on page load. |
+| **Lightweight** | < 1 MB packed size, minimal impact on page load. |
 | **Cross‑platform** | Works on any OS that runs Firefox (Windows, macOS, Linux). |
 | **Open‑source** | Fully transparent code on GitHub. |
 

@@ -12,7 +12,9 @@
     content="youtube transcript, copy youtube transcript, youtube transcript downloader, get youtube transcript, youtube transcript extractor">
   <meta name="author" content="Pawan Hirumina">
   <link rel="canonical" href="https://pawanhirumina.dev/yt-transcript-yoinker/">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+    integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
   <meta property="og:title" content="YouTube Transcript Yoinker - One-Click Transcript Copier">
   <meta property="og:description"
     content="Copy clean YouTube transcripts to clipboard with one click. No timestamps, no tracking.">
@@ -31,287 +33,295 @@
   "author": {"@type": "Person", "name": "Pawan Hirumina", "url": "https://pawanhirumina.dev"}
 }
 </script>
-<style>
- :root {
-    --bg: #0a0a0a;
-    --card: #141414;
-    --card2: #171717;
-    --border: #232323;
-    --border2: #2a2a2a;
-    --text: #EDECE9;
-    --muted: #9B9B9B;
-    --muted2: #6B6B6B;
-    --accent: #FF7139;
-    --btn-bg: #f90130;
-  }
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --card: #141414;
+      --card2: #171717;
+      --border: #232323;
+      --border2: #2a2a2a;
+      --text: #EDECE9;
+      --muted: #9B9B9B;
+      --muted2: #6B6B6B;
+      --accent: #FF7139;
+      --btn-bg: #f90130;
+    }
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: hsl(0 0% 85%) transparent;
-}
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: hsl(0 0% 85%) transparent;
+    }
 
-*::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
+    *::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
 
-*::-webkit-scrollbar-track {
-  background: transparent;
-}
+    *::-webkit-scrollbar-track {
+      background: transparent;
+    }
 
-*::-webkit-scrollbar-thumb {
-  background: hsl(0 0% 85%);
-  border-radius: 999px;
-}
+    *::-webkit-scrollbar-thumb {
+      background: hsl(0 0% 85%);
+      border-radius: 999px;
+    }
 
-*::-webkit-scrollbar-thumb:hover {
-  background: hsl(0 0% 75%);
-}
+    *::-webkit-scrollbar-thumb:hover {
+      background: hsl(0 0% 75%);
+    }
 
-/* Hide scrollbar for sidebar but keep scroll */
-.sidebar-scroll {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.sidebar-scroll::-webkit-scrollbar {
-  display: none;
-}
+    /* Hide scrollbar for sidebar but keep scroll */
+    .sidebar-scroll {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
 
-/* Show on hover only */
-.sidebar-scroll:hover {
-  scrollbar-width: thin;
-}
-.sidebar-scroll:hover::-webkit-scrollbar {
-  display: block;
-  width: 4px;
-}
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
-  }
+    .sidebar-scroll::-webkit-scrollbar {
+      display: none;
+    }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: ui-sans-system, -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
+    /* Show on hover only */
+    .sidebar-scroll:hover {
+      scrollbar-width: thin;
+    }
 
-  a {
-    color: #fff;
-    text-decoration: none;
-  }
+    .sidebar-scroll:hover::-webkit-scrollbar {
+      display: block;
+      width: 4px;
+    }
 
-  .wrap {
-    width: 100%;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
 
-  .top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 28px 0 0;
-    font-size: 13px;
-    letter-spacing: -0.01em;
-  }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-system, -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-  .top-left {
-    color: var(--muted2);
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
 
-  .dot {
-    width: 6px;
-    height: 6px;
-    background: #2ECC71;
-    border-radius: 50%;
-    display: inline-block
-  }
+    .wrap {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-  .top-right {
-    color: var(--muted2);
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 12px
-  }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0 0;
+      font-size: 13px;
+      letter-spacing: -0.01em;
+    }
 
-  .hero {
- width: 100%;
- height: 100vh;
-    padding: 96px 0 48px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    .top-left {
+      color: var(--muted2);
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
 
-  .hero h1 {
-    line-height: 1;
-  }
+    .dot {
+      width: 6px;
+      height: 6px;
+      background: #2ECC71;
+      border-radius: 50%;
+      display: inline-block
+    }
 
-  .hero .youtube {
-    background: #f90130;
-    padding: 3px;
-    cursor: pointer;
-    text-decoration: underline;
-  } 
- 
+    .top-right {
+      color: var(--muted2);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px
+    }
 
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid var(--border2);
-    background: var(--card);
-    border-radius: 999px;
-    padding: 6px 12px;
-    font-size: 12.5px;
-    color: var(--muted);
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    letter-spacing: -0.02em;
-  }
+    .hero {
+      width: 100%;
+      height: 100vh;
+      padding: 96px 0 48px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  .badge b {
-    color: var(--text);
-    font-weight: 500
-  }
+    .hero h1 {
+      line-height: 1;
+    }
 
-  h1 {
-    margin-top: 28px;
-    font-size: 56px;
-    line-height: 0.95;
-    letter-spacing: -0.04em;
-    font-weight: 650;
-  }
-
-  .why {
-    margin-top: 26px;
-  }
-
-  p {
-    font-size: 15.5px;
-    margin: 20px 16px;
- line-height: 1.5;
-  }
-
-  h1 span.muted {
-    color: var(--muted2);
-    font-weight: 450
-  }
+    .hero .youtube {
+      background: #f90130;
+      padding: 3px;
+      cursor: pointer;
+      text-decoration: underline;
+    }
 
 
-  .cta-row {
-    margin-top: 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border2);
+      background: var(--card);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 12.5px;
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      letter-spacing: -0.02em;
+    }
 
-  .btn-firefox {
-    background: linear-gradient(165deg,  #fca632, #f3294e);
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    padding: 6px 12px;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    transition: transform .12s, opacity .12s;
-  }
-  .btn-github {
-   color: #fff;
-    border: 1px solid white;
-    border-radius: 10px;
-    padding: 6px 12px;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    transition: transform .12s, opacity .12s;
-  }
-  .btn-firefox:hover {
-    transform: translateY(-1px);
-    opacity: .95
-  }
+    .badge b {
+      color: var(--text);
+      font-weight: 500
+    }
 
-  .btn-github:hover {
-    transform: translateY(-1px);
-    opacity: .95
-  }
-.cta-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: fit-content;
-  margin: 0 auto;
-}
-.cta-top {
-  display: flex;
-  gap: 12px;
-}
-.btn-back {
-  width: 100%;
-  background: var(--card);
-  border: 1px solid var(--border2);
-  color: var(--text);
-  border-radius: 10px;
-  padding: 10px 12px;
-  font-size: 14px;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: transform .12s, opacity .12s;
-}
-.btn-back:hover {
-  transform: translateY(-1px);
-  opacity: .95;
-  background: var(--card2);
-}
+    h1 {
+      margin-top: 28px;
+      font-size: 56px;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      font-weight: 650;
+    }
+
+    .why {
+      margin-top: 26px;
+    }
+
+    p {
+      font-size: 15.5px;
+      margin: 20px 16px;
+      line-height: 1.5;
+    }
+
+    h1 span.muted {
+      color: var(--muted2);
+      font-weight: 450
+    }
 
 
-</style>
+    .cta-row {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-firefox {
+      background: linear-gradient(165deg, #fca632, #f3294e);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: transform .12s, opacity .12s;
+    }
+
+    .btn-github {
+      color: #fff;
+      border: 1px solid white;
+      border-radius: 10px;
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: transform .12s, opacity .12s;
+    }
+
+    .btn-firefox:hover {
+      transform: translateY(-1px);
+      opacity: .95
+    }
+
+    .btn-github:hover {
+      transform: translateY(-1px);
+      opacity: .95
+    }
+
+    .cta-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    .cta-top {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-back {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border2);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: transform .12s, opacity .12s;
+    }
+
+    .btn-back:hover {
+      transform: translateY(-1px);
+      opacity: .95;
+      background: var(--card2);
+    }
+  </style>
 </head>
 
 
 <body>
   <div class="wrap">
-  
+
     <div class="hero">
       <div class="hero-content">
 
         <h1>Yoink! This transcript doesn't exist.</h1>
 
-          <p>Looks like you tried to yoink a page that isn't here. The video you’re looking for may have been deleted, or the link was copied wrong. While you're here, why not go yoink a real one?  </p>
-   <div class="cta-row">
-  <div class="cta-stack">
+        <p>Looks like you tried to yoink a page that isn't here. The video you’re looking for may have been deleted, or
+          the link was copied wrong. While you're here, why not go yoink a real one? </p>
+        <div class="cta-row">
+          <div class="cta-stack">
 
-    
-    <a class="btn-back" href="index.html" style="text-decoration:none">
-      <i class="fa-solid fa-arrow-left"></i> Back to Homepage
-    </a>
-  </div>
-</div>
+
+            <a class="btn-back" href="index.html" style="text-decoration:none">
+              <i class="fa-solid fa-arrow-left"></i> Back to Homepage
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
